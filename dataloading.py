@@ -207,7 +207,7 @@ class RobotCar_Eval_Dataset(Dataset):
 #    Adjust default root paths to your actual folders.
 # =========================================================
 def get_RobotCar_Train_dataloaders(
-    root_dir=r"C:/Users/djy41/Desktop/PhD Work/Datasets/RobotCar Seasons/Dataset/",
+    root_dir=r"path",
     csv_file="train_large.csv",                 # <- a CSV of (path,label); you can create this from your clustered train rows
     batch_size=256, num_workers=8, drop_unlabeled=True
 ):
@@ -218,7 +218,7 @@ def get_RobotCar_Train_dataloaders(
     return loader, ds
 
 def get_RobotCar_Triplet_Train_dataloaders(
-    root_dir=r"C:/Users/djy41/Desktop/PhD Work/Datasets/RobotCar Seasons/Dataset/",
+    root_dir=r"path",
     csv_file="triplets_large.csv",
     batch_size=64, num_workers=4
 ):
@@ -228,7 +228,7 @@ def get_RobotCar_Triplet_Train_dataloaders(
     return loader, ds
 
 def get_RobotCar_Eval_db_dataloaders(
-    root_dir=r"C:/Users/djy41/Desktop/PhD Work/Datasets/RobotCar Seasons/Dataset/",
+    root_dir=r"path",
     csv_file="database.csv",
     batch_size=256, num_workers=8
 ):
@@ -238,7 +238,7 @@ def get_RobotCar_Eval_db_dataloaders(
     return loader, ds
 
 def get_RobotCar_Eval_query_dataloaders(
-    root_dir=r"C:/Users/djy41/Desktop/PhD Work/Datasets/RobotCar Seasons/Dataset/",
+    root_dir=r"path",
     csv_file="queries.csv",
     batch_size=256, num_workers=8
 ):
@@ -280,7 +280,7 @@ class RobotCar_25_Train_Dataset(Dataset):
 #--- Loading the Training RobotCar 25 Street dataset    
 #***************************************************************************** 
 def get_RobotCar_25_Train_dataloaders(batch_size=256, num_workers=8):
-    root_dir = "C:/Users/djy41/Desktop/PhD Work/Datasets/RobotCar/2014-11-25-09-18-32/train/"
+    root_dir = "path"
     transform = get_grey_transform()  
 
     train_dataset = RobotCar_25_Train_Dataset(csv_file="data.csv", root_dir=root_dir, transform=transform)
@@ -324,7 +324,7 @@ class RobotCar_25_Triplet_Train_Dataset(Dataset):
 #***************************************************************************** 
 def get_RobotCar_25_Triplet_Train_dataloaders(batch_size=256, num_workers=8):
     """Pittsburg30k dataloader with (640, 480) images."""    
-    root_dir = "C:/Users/djy41/Desktop/PhD Work/Datasets/RobotCar/2014-11-25-09-18-32/train/"
+    root_dir = "path"
 
     transform = get_grey_transform()  
     train_dataset = RobotCar_25_Triplet_Train_Dataset(csv_file = "triplets.csv", root_dir = root_dir, transform=transform)
@@ -363,7 +363,7 @@ class RobotCar_25_Eval_Dataset(Dataset):
 #--- Loading the Training db RobotCar 25 dataset    
 #***************************************************************************** 
 def get_RobotCar_25_Eval_db_dataloaders(batch_size=256, num_workers=8):    
-    root_dir = "C:/Users/djy41/Desktop/PhD Work/Datasets/RobotCar/2014-11-28-12-07-13/eval/"
+    root_dir = "path"
     transform = get_grey_transform()  
 
     train_dataset = RobotCar_25_Eval_Dataset(csv_file="database.csv", root_dir=root_dir, transform=transform)
@@ -377,7 +377,7 @@ def get_RobotCar_25_Eval_db_dataloaders(batch_size=256, num_workers=8):
 #--- Loading the Training query RobotCar 25 dataset    
 #***************************************************************************** 
 def get_RobotCar_25_Eval_query_dataloaders(batch_size=256, num_workers=8):   
-    root_dir = "C:/Users/djy41/Desktop/PhD Work/Datasets/RobotCar/2014-11-28-12-07-13/eval/"
+    root_dir = "path"
     transform = get_grey_transform()  
 
     train_dataset = RobotCar_25_Eval_Dataset(csv_file="query.csv", root_dir=root_dir, transform=transform)
@@ -418,7 +418,7 @@ class RobotCar_Seq_Eval_Dataset(Dataset):
 #--- Loading the Training db RobotCar 25 dataset    
 #***************************************************************************** 
 def get_RobotCar_Seq_Eval_db_dataloaders(batch_size=256, num_workers=8):    
-    root_dir = "C:/Users/djy41/Desktop/PhD Work/Datasets/RobotCar/2014-11-28-12-07-13/eval/"
+    root_dir = "path"
     transform = get_grey_transform()  
 
     train_dataset = RobotCar_Seq_Eval_Dataset(csv_file="database.csv", root_dir=root_dir, transform=transform)
@@ -463,7 +463,7 @@ class Pittsburg30k_Train_Dataset(Dataset):
 #--- Loading the Training Pittsburg30k Street dataset    
 #***************************************************************************** 
 def get_Pittsburg30k_Train_dataloaders(batch_size=256, num_workers=8):
-    root_dir = "C:/Users/djy41/Desktop/PhD Work/Datasets/Pittsburgh30k_train/"
+    root_dir = "path"
     transform = get_simple_transform()  
 
     train_dataset = Pittsburg30k_Train_Dataset(csv_file="train.csv", root_dir=root_dir, transform=transform)
@@ -507,7 +507,7 @@ class Pittsburg30k_Triplet_Train_Dataset(Dataset):
 #***************************************************************************** 
 def get_Pittsburg30k_Triplet_Train_dataloaders(batch_size=256, num_workers=8):
     """Pittsburg30k dataloader with (640, 480) images."""    
-    root_dir = "C:/Users/djy41/Desktop/PhD Work/Datasets/Pittsburgh30k_Triplet_Train/"
+    root_dir = "path"
 
     transform = get_simple_transform()  
     train_dataset = Pittsburg30k_Triplet_Train_Dataset(csv_file = "triplets.csv", root_dir = root_dir, transform=transform)
@@ -520,7 +520,7 @@ def get_Pittsburg30k_Triplet_Train_dataloaders(batch_size=256, num_workers=8):
 #--- Loading the Training db Pittsburg30k dataset    
 #***************************************************************************** 
 def get_Pittsburg30k_Eval_db_dataloaders(batch_size=256, num_workers=8):    
-    root_dir = "C:/Users/djy41/Desktop/PhD Work/Datasets/Pittsburgh30k_test/"
+    root_dir = "path"
     transform = get_simple_transform()  
 
     train_dataset = Pittsburg30k_Train_Dataset(csv_file="database.csv", root_dir=root_dir, transform=transform)
@@ -534,7 +534,7 @@ def get_Pittsburg30k_Eval_db_dataloaders(batch_size=256, num_workers=8):
 #--- Loading the Training query Pittsburg30k dataset    
 #***************************************************************************** 
 def get_Pittsburg30k_Eval_query_dataloaders(batch_size=256, num_workers=8):   
-    root_dir = "C:/Users/djy41/Desktop/PhD Work/Datasets/Pittsburgh30k_test/"
+    root_dir = "path"
     transform = get_simple_transform()  
 
     train_dataset = Pittsburg30k_Train_Dataset(csv_file="query.csv", root_dir=root_dir, transform=transform)
@@ -628,7 +628,7 @@ class PittsburghCSV(Dataset):
 # Evaluation loaders (5m-clustered labels + coords available)
 # ---------------------------------------------
 def get_Pittsburgh30k_Eval_db_dataloaders_5m(batch_size=256, num_workers=8, return_meta=True):
-    root_dir = r"C:/Users/djy41/Desktop/PhD Work/Datasets/Pittsburgh30k_Test_5m"
+    root_dir = r"path"
     transform = get_simple_transform()  # or get_resize_transform()
     ds = PittsburghCSV(root_dir=root_dir, csv_file="database.csv",
                        transform=transform, return_meta=return_meta)
@@ -637,7 +637,7 @@ def get_Pittsburgh30k_Eval_db_dataloaders_5m(batch_size=256, num_workers=8, retu
     return dl, ds
 
 def get_Pittsburgh30k_Eval_query_dataloaders_5m(batch_size=256, num_workers=8, return_meta=True):
-    root_dir = r"C:/Users/djy41/Desktop/PhD Work/Datasets/Pittsburgh30k_Test_5m"
+    root_dir = r"path"
     transform = get_simple_transform()  # or get_resize_transform()
     ds = PittsburghCSV(root_dir=root_dir, csv_file="query.csv",
                        transform=transform, return_meta=return_meta)
@@ -686,7 +686,7 @@ class Mapillary_Dataset(Dataset):
 #***************************************************************************** 
 def get_Mapillary_dataloaders(batch_size=256, num_workers=8):
     """Mapillary dataloader with (640, 480) images."""    
-    root_dir = "C:/Users/djy41/Desktop/PhD Work/Datasets/Mapillary Streets1/training/images"
+    root_dir = "path"
     csv_file = os.path.join(root_dir, "data.csv")
 
     transform = get_simple_transform()  
@@ -701,7 +701,7 @@ def get_Mapillary_dataloaders(batch_size=256, num_workers=8):
 #***************************************************************************** 
 def get_Test_Mapillary_dataloaders(batch_size=256, num_workers=8):
     """Mapillary dataloader with (640, 480) images."""    
-    root_dir = "C:/Users/djy41/Desktop/PhD Work/Datasets/Mapillary Streets1/test/images"
+    root_dir = "path"
     csv_file = os.path.join(root_dir, "data.csv")
 
     transform = get_resize_transform()  
@@ -747,7 +747,7 @@ class Map_Tokyo_Dataset(Dataset):
 #***************************************************************************** 
 def get_Map_Tokyo_dataloaders(batch_size=256, num_workers=8):
     """Mapillary dataloader with (640, 480) images."""    
-    root_dir = "C:/Users/djy41/Desktop/PhD Work/Datasets/Mapillary_Tokyo"
+    root_dir = "path"
     csv_file = os.path.join(root_dir, "data.csv")
 
     transform = get_simple_transform()  
@@ -793,7 +793,7 @@ class TokyoPlacesDataset(Dataset):
 #***************************************************************************** 
 def get_Tokyo_Train_dataloaders(batch_size=256, num_workers=8):
     """Tokyo 24/7 dataloader with (640, 480) images."""    
-    root_dir = "C:/Users/djy41/Desktop/PhD Work/Datasets/Tokyo 24_7/train/"
+    root_dir = "path"
 
     transform = get_simple_transform()  
     train_dataset = TokyoPlacesDataset(csv_file="train.csv", root_dir=root_dir, transform=transform)
@@ -836,7 +836,7 @@ class Tokyo_Triplet_Train_Dataset(Dataset):
 #***************************************************************************** 
 def get_Tokyo_Triplet_Train_dataloaders(batch_size=256, num_workers=8):
     """Tokyo 24/7 dataloader with (640, 480) images."""    
-    root_dir = "C:/Users/djy41/Desktop/PhD Work/Datasets/Tokyo 24_7/train/"
+    root_dir = "path"
 
     transform = get_simple_transform()  
     train_dataset = Tokyo_Triplet_Train_Dataset(csv_file = "triplets.csv", root_dir = root_dir, transform=transform)
@@ -850,7 +850,7 @@ def get_Tokyo_Triplet_Train_dataloaders(batch_size=256, num_workers=8):
 #***************************************************************************** 
 def get_Tokyo_Triplet_Test_dataloaders(batch_size=256, num_workers=8):
     """Tokyo 24/7 dataloader with (640, 480) images."""    
-    root_dir = "C:/Users/djy41/Desktop/PhD Work/Datasets/Tokyo 24_7/train/"
+    root_dir = "path"
 
     transform = get_simple_transform()  
     test_dataset = Tokyo_Triplet_Train_Dataset(csv_file = "triplets.csv", root_dir = root_dir, transform=transform)
@@ -997,7 +997,7 @@ class TokyoEvalDatasetMultiRoot(Dataset):
 #--- Loading the Eval Tokyo 24/7 Street dataset    
 #***************************************************************************** 
 def get_Tokyo_Eval_dataloaders(batch_size=256,num_workers=8,
-    dataset_root=r"C:\Users\djy41\Desktop\PhD Work\Datasets\Tokyo 24_7",
+    dataset_root=r"path",
     db_csv_name="database.csv",
     use_queries=False,
     shuffle=False
@@ -1027,7 +1027,7 @@ def get_Tokyo_Eval_dataloaders(batch_size=256,num_workers=8,
 #--- Loading the Eval Tokyo 24/7 Street queries
 #***************************************************************************** 
 def get_Tokyo_Query_dataloaders(batch_size=256,num_workers=8,
-    dataset_root=r"C:\Users\djy41\Desktop\PhD Work\Datasets\Tokyo 24_7",
+    dataset_root=r"path",
     db_csv_name="queries.csv",
     use_queries=False,
     shuffle=False
@@ -1092,7 +1092,7 @@ def load_data(dataset):
 # Usage
 # ------------------------
 if __name__ == "__main__":
-    # root_dir = "C:/Users/djy41/Desktop/PhD/Datasets/Mapillary Streets1/training/images"
+    # root_dir = "path"
     # csv_file = os.path.join(root_dir, "data.csv")
 
     # transform = get_simple_transform()  
